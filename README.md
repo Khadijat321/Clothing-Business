@@ -1,2 +1,0 @@
-# Clothing-Business
-E-commerce
