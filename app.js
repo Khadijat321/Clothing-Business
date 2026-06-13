@@ -183,7 +183,7 @@ const products = [
     },
         {
         id: 14,
-        name: "Floral Summer Dress",
+        name: "Rigges",
         category: "Perfumes",
         price: 129.99,
         originalPrice: null,
@@ -193,7 +193,21 @@ const products = [
         badge: "sale",
         sizes: ["XS", "S", "M", "L", "XL"],
         colors: ["#e94560", "#28a745", "#ffc107"],
-        description: "A beautiful floral print summer dress with a flowing silhouette. Made from lightweight, breathable fabric perfect for warm days."
+        description: "A perfume that brings a cool attractive smell."
+    },
+          {
+        id: 14,
+        name: "Wrist watch",
+        category: "accessories",
+        price: 129.99,
+        originalPrice: null,
+        image: "WhatsApp Image 2026-06-12 at 2.18.03 PM.jpeg",
+        rating: 5.0,
+        reviews: 215,
+        badge: "sale",
+        sizes: ["XS", "S", "M", "L", "XL"],
+        colors: ["#e94560", "#28a745", "#ffc107"],
+        description: "A perfume that brings a cool attractive smell."
     },
 ];
 
