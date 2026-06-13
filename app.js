@@ -196,7 +196,7 @@ const products = [
         description: "A perfume that brings a cool attractive smell."
     },
           {
-        id: 14,
+        id: 15,
         name: "Wrist watch",
         category: "accessories",
         price: 129.99,
