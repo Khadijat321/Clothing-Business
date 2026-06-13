@@ -201,7 +201,7 @@ const products = [
         category: "accessories",
         price: 129.99,
         originalPrice: null,
-        image: "WhatsApp Image 2026-06-12 at 2.18.03 PM.jpeg",
+        image: "WhatsApp Image 2026-06-12 at 2.18.42 PM.jpeg",
         rating: 5.0,
         reviews: 215,
         badge: "sale",
