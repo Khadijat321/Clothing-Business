@@ -166,7 +166,35 @@ const products = [
         sizes: ["S", "M", "L", "XL"],
         colors: ["#d4a574", "#ffffff", "#495057"],
         description: "Lightweight linen blazer perfect for summer events. Features a relaxed fit and patch pockets."
-    }
+    },
+    {
+        id: 13,
+        name: "Floral Summer Dress",
+        category: "women",
+        price: 129.99,
+        originalPrice: 169.99,
+        image: "",
+        rating: 4.3,
+        reviews: 215,
+        badge: "sale",
+        sizes: ["XS", "S", "M", "L", "XL"],
+        colors: ["#e94560", "#28a745", "#ffc107"],
+        description: "A beautiful floral print summer dress with a flowing silhouette. Made from lightweight, breathable fabric perfect for warm days."
+    },
+        {
+        id: 14,
+        name: "Floral Summer Dress",
+        category: "women",
+        price: 129.99,
+        originalPrice: null,
+        image: "",
+        rating: 5.0,
+        reviews: 215,
+        badge: "sale",
+        sizes: ["XS", "S", "M", "L", "XL"],
+        colors: ["#e94560", "#28a745", "#ffc107"],
+        description: "A beautiful floral print summer dress with a flowing silhouette. Made from lightweight, breathable fabric perfect for warm days."
+    },
 ];
 
 // ===== State =====
