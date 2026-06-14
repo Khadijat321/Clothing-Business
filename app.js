@@ -113,17 +113,17 @@ const products = [
     },
     {
         id: 9,
-        name: "Polo Shirt",
+        name: "Casa Blanca Cotton Top",
         category: "men",
         price: 59.99,
         originalPrice: null,
-        image: "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=400",
+        image: "WhatsApp Image 2026-06-13 at 10.41.38 AM.jpeg",
         rating: 4.4,
         reviews: 167,
         badge: null,
         sizes: ["S", "M", "L", "XL", "XXL"],
         colors: ["#28a745", "#1a1a2e", "#ffffff", "#e94560"],
-        description: "Classic polo shirt in premium pique cotton. Features a two-button placket and ribbed collar and cuffs."
+        description: "Classic casa blanca top in premium pique cotton. Features a ribbed collar and cuffs."
     },
     {
         id: 10,
