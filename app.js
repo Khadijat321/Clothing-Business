@@ -155,17 +155,17 @@ const products = [
     },
     {
         id: 12,
-        name: "Linen Blazer",
+        name: "Amiri Top",
         category: "men",
         price: 189.99,
         originalPrice: 249.99,
-        image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400",
+        image: "WhatsApp Image 2026-06-13 at 10.41.45 AM.jpeg",
         rating: 4.7,
         reviews: 45,
         badge: "sale",
         sizes: ["S", "M", "L", "XL"],
         colors: ["#d4a574", "#ffffff", "#495057"],
-        description: "Lightweight linen blazer perfect for summer events. Features a relaxed fit and patch pockets."
+        description: "Well designed top."
     },
     {
         id: 13,
