@@ -99,17 +99,17 @@ const products = [
     },
     {
         id: 8,
-        name: "Cashmere Scarf",
+        name: "Hair Clip",
         category: "accessories",
         price: 89.99,
         originalPrice: 119.99,
-        image: "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=400",
+        image: "WhatsApp Image 2026-06-13 at 7.58.31 AM.jpeg",
         rating: 4.9,
         reviews: 201,
         badge: "sale",
         sizes: ["One Size"],
         colors: ["#d4a574", "#1a1a2e", "#e94560", "#495057"],
-        description: "Ultra-soft cashmere scarf with a classic weave. Adds a touch of luxury to any outfit while keeping you warm."
+        description: "Matches your dressing for anykind of outing."
     },
     {
         id: 9,
