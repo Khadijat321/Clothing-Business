@@ -141,17 +141,17 @@ const products = [
     },
     {
         id: 11,
-        name: "Leather Belt",
+        name: "Hand Bag",
         category: "accessories",
         price: 49.99,
         originalPrice: null,
-        image: "https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=400",
+        image: "WhatsApp Image 2026-06-13 at 8.10.26 AM.jpeg",
         rating: 4.5,
         reviews: 134,
         badge: null,
         sizes: ["S", "M", "L", "XL"],
         colors: ["#d4a574", "#1a1a2e"],
-        description: "Genuine leather belt with a classic buckle. Durable construction that ages beautifully over time."
+        description: "Genuine leather bag with a classic zip. Durable construction that ages beautifully over time."
     },
     {
         id: 12,
