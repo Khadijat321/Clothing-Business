@@ -127,11 +127,11 @@ const products = [
     },
     {
         id: 10,
-        name: "Maxi Skirt",
+        name: "Ribbed long-sleeve crewneck top",
         category: "women",
         price: 79.99,
         originalPrice: null,
-        image: "https://images.unsplash.com/photo-1583496661160-fb5886a0ujf?w=400",
+        image: "WhatsApp Image 2026-06-13 at 7.47.24 AM.jpeg",
         rating: 4.6,
         reviews: 88,
         badge: "new",
