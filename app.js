@@ -237,6 +237,21 @@ const products = [
         colors: ["#e94560", "#28a745", "#ffc107"],
         description: "Best for couples."
     },
+     {
+        id: 14,
+        name: "KALY",
+        category: "Perfumes",
+        price: 129.99,
+        originalPrice: null,
+        image: "WhatsApp Image 2026-06-13 at 7.41.44 AM.jpeg",
+        rating: 5.0,
+        reviews: 215,
+        badge: "sale",
+        sizes: ["XS", "S", "M", "L", "XL"],
+        colors: ["#e94560", "#28a745", "#ffc107"],
+        description: "A perfume that brings a cool attractive smell."
+    },
+    WhatsApp Image 2026-06-13 at 7.41.44 AM.jpeg
 ];
 
 // ===== State =====
