@@ -208,7 +208,22 @@ const products = [
         sizes: ["XS", "S", "M", "L", "XL"],
         colors: ["#e94560", "#28a745", "#ffc107"],
         description: "A perfume that brings a cool attractive smell."
+    },
+        {
+        id: 15,
+        name: "Hair Band",
+        category: "accessories",
+        price: 129.99,
+        originalPrice: null,
+        image: "WhatsApp Image 2026-06-12 at 2.18.06 PM.jpeg",
+        rating: 5.0,
+        reviews: 215,
+        badge: "sale",
+        sizes: ["XS", "S", "M", "L", "XL"],
+        colors: ["#e94560", "#28a745", "#ffc107"],
+        description: "Good for packing of hair."
     }
+
 ];
 
 // ===== State =====
