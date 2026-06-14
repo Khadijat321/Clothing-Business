@@ -1,17 +1,17 @@
 const products = [
     {
         id: 1,
-        name: "Classic Oxford Shirt",
+        name: "Top",
         category: "men",
         price: 89.99,
         originalPrice: 120.00,
-        image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400",
+        image: "WhatsApp Image 2026-06-13 at 10.41.17 AM.jpeg",
         rating: 4.8,
         reviews: 124,
         badge: "sale",
         sizes: ["S", "M", "L", "XL", "XXL"],
         colors: ["#1a1a2e", "#ffffff", "#d4a574", "#495057"],
-        description: "A timeless Oxford shirt crafted from premium cotton. Features a button-down collar, chest pocket, and tailored fit. Perfect for both casual and formal occasions."
+        description: "Classic Top and tailored fit. Perfect for both casual and formal occasions."
     },
     {
         id: 2,
