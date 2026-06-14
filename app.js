@@ -57,17 +57,17 @@ const products = [
     },
     {
         id: 5,
-        name: "Wool Blend Overcoat",
+        name: "OFCL Top",
         category: "men",
         price: 299.99,
         originalPrice: 399.99,
-        image: "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=400",
+        image: "WhatsApp Image 2026-06-13 at 10.41.41 AM.jpeg",
         rating: 4.8,
         reviews: 56,
         badge: "sale",
         sizes: ["S", "M", "L", "XL"],
         colors: ["#1a1a2e", "#495057", "#d4a574"],
-        description: "Premium wool blend overcoat with a tailored silhouette. Features notched lapels, welt pockets, and a full lining for warmth."
+        description: "Premium top blend overcoat. Features notched lapels, and a full lining for warmth."
     },
     {
         id: 6,
