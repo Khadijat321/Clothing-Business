@@ -1,3 +1,4 @@
+/* ===== CSS Variables ===== */
 :root {
     --primary: #1a1a2e;
     --primary-light: #16213e;
@@ -1423,6 +1424,14 @@ ul {
     color: var(--accent);
 }
 
+.payment-option i.fa-university {
+    color: var(--primary);
+}
+
+.payment-option i.fa-money-bill-wave {
+    color: var(--success);
+}
+
 .order-summary {
     grid-column: span 2;
 }
@@ -1803,6 +1812,37 @@ ul {
     transform: translateY(-4px);
 }
 
+/* ===== WhatsApp Button ===== */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 100px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25D366;
+    color: white;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1200;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    transition: var(--transition);
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    background: #128C7E;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
     .hero {
@@ -1970,6 +2010,14 @@ ul {
     .contact-section {
         padding: 60px 16px;
     }
+    
+    .whatsapp-btn {
+        bottom: 90px;
+        right: 16px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2026,8 +2074,3 @@ ul {
     from { transform: translateX(100%); opacity: 0; }
     to { transform: translateX(0); opacity: 1; }
 }
-
-with open('/mnt/agents/output/clothing-store/css/style.css', 'w') as f:
-    f.write(css_content)
-
-print("✅ style.css created")
