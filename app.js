@@ -208,7 +208,7 @@ const products = [
         sizes: ["XS", "S", "M", "L", "XL"],
         colors: ["#e94560", "#28a745", "#ffc107"],
         description: "A perfume that brings a cool attractive smell."
-    },
+    }
 ];
 
 // ===== State =====
