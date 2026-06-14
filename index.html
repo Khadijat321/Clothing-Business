@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lady T Collection</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Lady T Collection - Premium Clothing Store</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
@@ -62,14 +62,14 @@
             <i class="fas fa-truck"></i>
             <div>
                 <h4>Free Shipping</h4>
-                <p>On orders over $100</p>
+                <p>On orders over ₦100,000</p>
             </div>
         </div>
         <div class="feature-item">
             <i class="fas fa-undo"></i>
             <div>
                 <h4>Easy Returns</h4>
-                <p>30-day return policy</p>
+                <p>14-day return policy</p>
             </div>
         </div>
         <div class="feature-item">
@@ -157,12 +157,12 @@
                 <div class="contact-card">
                     <i class="fas fa-map-marker-alt"></i>
                     <h4>Visit Us</h4>
-                    <p>14 prince olubi street<br>Ajasa command lagos</p>
+                    <p>12 Admiralty Way<br>Lekki Phase 1, Lagos</p>
                 </div>
                 <div class="contact-card">
                     <i class="fas fa-phone"></i>
                     <h4>Call Us</h4>
-                    <p>09021724271, 09134650555 ,<br>Mon-Fri 9am-6pm</p>
+                    <p>09021724271, 09134650555 ,<br>Mon-Sat 9am-6pm WAT</p>
                 </div>
                 <div class="contact-card">
                     <i class="fas fa-envelope"></i>
@@ -170,9 +170,9 @@
                     <p>yusufkhadijat466@gmail.com<br>Khadijatyusuf554@gmail.com</p>
                 </div>
                 <div class="contact-card">
-                    <i class="fas fa-comments"></i>
-                    <h4>Live Chat</h4>
-                    <p>Available 24/7<br>Click to start chatting</p>
+                    <i class="fab fa-whatsapp"></i>
+                    <h4>WhatsApp</h4>
+                    <p>Available 24/7<br>Click to chat</p>
                 </div>
             </div>
             <form class="contact-form" id="contactForm">
@@ -200,7 +200,7 @@
         </div>
     </section>
 
-    <!-- Newsletter -->
+        <!-- Newsletter -->
     <section class="newsletter">
         <div class="newsletter-content">
             <h2>Join Our Newsletter</h2>
@@ -249,8 +249,8 @@
             <div class="footer-links">
                 <h4>Contact Info</h4>
                 <ul>
-                    <li><i class="fas fa-map-marker-alt"></i> 14 prince olubi street Ajasa command lagos</li>
-                    <li><i class="fas fa-phone"></i>09021724271</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Lekki, Lagos, Nigeria</li>
+                    <li><i class="fas fa-phone"></i> 09021724271</li>
                     <li><i class="fas fa-envelope"></i>Khadijatyusuf554@gmail.com</li>
                 </ul>
             </div>
@@ -272,7 +272,7 @@
         <div class="cart-footer" id="cartFooter">
             <div class="cart-total">
                 <span>Subtotal:</span>
-                <span id="cartTotal">$0.00</span>
+                <span id="cartTotal">₦0</span>
             </div>
             <button class="btn btn-primary btn-full" id="checkoutBtn">Proceed to Checkout</button>
             <p class="cart-note">Shipping & taxes calculated at checkout</p>
@@ -306,7 +306,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Phone *</label>
-                                <input type="tel" id="checkoutPhone" required placeholder="+1 (555) 000-0000">
+                                <input type="tel" id="checkoutPhone" required placeholder="0801 234 5678">
                             </div>
                         </div>
                         <div class="checkout-section">
@@ -332,7 +332,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>State *</label>
-                                    <input type="text" id="shipState" required>
+                                    <input type="text" id="shipState" required placeholder="e.g., Lagos">
                                 </div>
                             </div>
                             <div class="form-row">
@@ -343,13 +343,10 @@
                                 <div class="form-group">
                                     <label>Country *</label>
                                     <select id="shipCountry" required>
-                                        <option value="US">United States</option>
-                                        <option value="CA">Canada</option>
-                                        <option value="UK">United Kingdom</option>
-                                        <option value="AU">Australia</option>
-                                        <option value="DE">Germany</option>
-                                        <option value="FR">France</option>
-                                        <option value="NI">Nigeria</option>
+                                        <option value="NG" selected>Nigeria</option>
+                                        <option value="GH">Ghana</option>
+                                        <option value="KE">Kenya</option>
+                                        <option value="ZA">South Africa</option>
                                     </select>
                                 </div>
                             </div>
@@ -358,12 +355,12 @@
                             <h3>Payment Method</h3>
                             <div class="payment-methods">
                                 <label class="payment-option">
-                                    <input type="radio" name="payment" value="card" checked>
-                                    <span><i class="fas fa-credit-card"></i> Credit/Debit Card</span>
+                                    <input type="radio" name="payment" value="paystack" checked>
+                                    <span><i class="fas fa-credit-card"></i> Pay with Card (Paystack)</span>
                                 </label>
                                 <label class="payment-option">
-                                    <input type="radio" name="payment" value="paypal">
-                                    <span><i class="fab fa-paypal"></i> PayPal</span>
+                                    <input type="radio" name="payment" value="transfer">
+                                    <span><i class="fas fa-university"></i> Bank Transfer</span>
                                 </label>
                                 <label class="payment-option">
                                     <input type="radio" name="payment" value="cod">
@@ -397,19 +394,19 @@
                             <div class="summary-totals">
                                 <div class="summary-line">
                                     <span>Subtotal</span>
-                                    <span id="summarySubtotal">$0.00</span>
+                                    <span id="summarySubtotal">₦0</span>
                                 </div>
                                 <div class="summary-line">
                                     <span>Shipping</span>
-                                    <span id="summaryShipping">Free</span>
+                                    <span id="summaryShipping">Calculated</span>
                                 </div>
                                 <div class="summary-line">
-                                    <span>Tax</span>
-                                    <span id="summaryTax">$0.00</span>
+                                    <span>VAT (7.5%)</span>
+                                    <span id="summaryTax">₦0</span>
                                 </div>
                                 <div class="summary-line total">
                                     <span>Total</span>
-                                    <span id="summaryTotal">$0.00</span>
+                                    <span id="summaryTotal">₦0</span>
                                 </div>
                             </div>
                         </div>
@@ -430,7 +427,10 @@
             </div>
             <h2>Order Placed Successfully!</h2>
             <p>Thank you for your purchase. Your order number is <strong id="orderNumber">#ORD-0000</strong>.</p>
-            <p>A confirmation email has been sent to <span id="confirmEmail"></span>.</p>
+            <p>A confirmation has been sent to <span id="confirmEmail"></span>.</p>
+            <p style="color: var(--gray-500); margin-top: 8px; font-size: 0.9rem;">
+                <i class="fab fa-whatsapp"></i> You will also receive a WhatsApp notification shortly.
+            </p>
             <button class="btn btn-primary" id="continueShopping">Continue Shopping</button>
         </div>
     </div>
@@ -454,7 +454,7 @@
             </div>
             <div class="chat-messages" id="chatMessages">
                 <div class="message received">
-                    <p>Hi there! Welcome to Lady T Collection. How can I help you today?</p>
+                    <p>Hi there! Welcome to Lady T Collection Nigeria. How can I help you today?</p>
                     <span class="message-time">Just now</span>
                 </div>
             </div>
@@ -465,12 +465,17 @@
         </div>
     </div>
 
+    <!-- WhatsApp Quick Contact -->
+    <a href="https://wa.me/+2349021724271" class="whatsapp-btn" target="_blank" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- Toast Notifications -->
     <div class="toast-container" id="toastContainer"></div>
 
     <!-- Scroll to Top -->
     <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
 
-    <script src="app.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
