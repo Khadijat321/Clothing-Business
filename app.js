@@ -15,17 +15,17 @@ const products = [
     },
     {
         id: 2,
-        name: "Slim Fit Chino Pants",
-        category: "men",
+        name: "Top",
+        category: "UniSex",
         price: 79.99,
         originalPrice: null,
-        image: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400",
+        image: "WhatsApp Image 2026-06-13 at 10.41.18 AM.jpeg",
         rating: 4.6,
         reviews: 89,
         badge: null,
         sizes: ["28", "30", "32", "34", "36"],
         colors: ["#d4a574", "#1a1a2e", "#868e96"],
-        description: "Versatile slim-fit chinos made from stretch cotton twill. Features a modern tapered leg and comfortable fit for all-day wear."
+        description: "Versatile Top. Features a modern tapered chest and comfortable fit for all-day wear."
     },
     {
         id: 3,
