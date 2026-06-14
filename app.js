@@ -251,7 +251,6 @@ const products = [
         colors: ["#e94560", "#28a745", "#ffc107"],
         description: "A perfume that brings a cool attractive smell."
     },
-    WhatsApp Image 2026-06-13 at 7.41.44 AM.jpeg
 ];
 
 // ===== State =====
