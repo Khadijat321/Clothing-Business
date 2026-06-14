@@ -22,7 +22,7 @@ const products = [
         image: "WhatsApp Image 2026-06-13 at 10.41.18 AM.jpeg",
         rating: 4.6,
         reviews: 89,
-        badge: new,
+        badge: "new",
         sizes: ["28", "30", "32", "34", "36"],
         colors: ["#d4a574", "#1a1a2e", "#868e96"],
         description: "Versatile Top. Features a modern tapered chest and comfortable fit for all-day wear."
@@ -78,7 +78,7 @@ const products = [
         image: "WhatsApp Image 2026-06-13 at 7.40.58 AM.jpeg",
         rating: 4.5,
         reviews: 92,
-        badge: new,
+        badge: "new",
         sizes: ["XS", "S", "M", "L"],
         colors: ["#ffffff", "#e94560", "#1a1a2e"],
         description: "Luxurious Trouser with a relaxed fit and elegant drape. Perfect for the office."
