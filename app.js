@@ -71,17 +71,17 @@ const products = [
     },
     {
         id: 6,
-        name: "Silk Blouse",
+        name: "Trouser",
         category: "women",
         price: 119.99,
         originalPrice: null,
-        image: "https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=400",
+        image: "WhatsApp Image 2026-06-13 at 7.40.58 AM.jpeg",
         rating: 4.5,
         reviews: 92,
         badge: null,
         sizes: ["XS", "S", "M", "L"],
         colors: ["#ffffff", "#e94560", "#1a1a2e"],
-        description: "Luxurious silk blouse with a relaxed fit and elegant drape. Perfect for the office or a night out."
+        description: "Luxurious Trouser with a relaxed fit and elegant drape. Perfect for the office."
     },
     {
         id: 7,
