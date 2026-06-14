@@ -43,17 +43,17 @@ const products = [
     },
     {
         id: 4,
-        name: "Leather Crossbody Bag",
+        name: "Hand Bag",
         category: "accessories",
         price: 149.99,
         originalPrice: null,
-        image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400",
+        image: "WhatsApp Image 2026-06-13 at 10.47.22 AM.jpeg",
         rating: 4.7,
         reviews: 78,
         badge: "new",
         sizes: ["One Size"],
         colors: ["#1a1a2e", "#d4a574", "#868e96"],
-        description: "Genuine leather crossbody bag with adjustable strap and multiple compartments. Elegant design that complements any outfit."
+        description: "Genuine portable Hand bag with adjustable strap and multiple compartments. Elegant design that complements any outfit."
     },
     {
         id: 5,
