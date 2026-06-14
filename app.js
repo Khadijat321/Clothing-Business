@@ -8,7 +8,7 @@ const products = [
         image: "WhatsApp Image 2026-06-13 at 10.41.17 AM.jpeg",
         rating: 4.8,
         reviews: 124,
-        badge: "sale",
+        badge: "new",
         sizes: ["S", "M", "L", "XL", "XXL"],
         colors: ["#1a1a2e", "#ffffff", "#d4a574", "#495057"],
         description: "Classic Top and tailored fit. Perfect for both casual and formal occasions."
@@ -22,7 +22,7 @@ const products = [
         image: "WhatsApp Image 2026-06-13 at 10.41.18 AM.jpeg",
         rating: 4.6,
         reviews: 89,
-        badge: null,
+        badge: new,
         sizes: ["28", "30", "32", "34", "36"],
         colors: ["#d4a574", "#1a1a2e", "#868e96"],
         description: "Versatile Top. Features a modern tapered chest and comfortable fit for all-day wear."
@@ -36,7 +36,7 @@ const products = [
         image: "WhatsApp Image 2026-06-13 at 11.08.50 AM.jpeg",
         rating: 4.9,
         reviews: 215,
-        badge: "sale",
+        badge: "new",
         sizes: ["XS", "S", "M", "L", "XL"],
         colors: ["#e94560", "#28a745", "#ffc107"],
         description: "A beautiful floral print summer dress with a flowing silhouette. Made from lightweight, breathable fabric perfect for warm days."
@@ -64,7 +64,7 @@ const products = [
         image: "WhatsApp Image 2026-06-13 at 10.41.41 AM.jpeg",
         rating: 4.8,
         reviews: 56,
-        badge: "sale",
+        badge: "new",
         sizes: ["S", "M", "L", "XL"],
         colors: ["#1a1a2e", "#495057", "#d4a574"],
         description: "Premium top blend overcoat. Features notched lapels, and a full lining for warmth."
@@ -78,7 +78,7 @@ const products = [
         image: "WhatsApp Image 2026-06-13 at 7.40.58 AM.jpeg",
         rating: 4.5,
         reviews: 92,
-        badge: null,
+        badge: new,
         sizes: ["XS", "S", "M", "L"],
         colors: ["#ffffff", "#e94560", "#1a1a2e"],
         description: "Luxurious Trouser with a relaxed fit and elegant drape. Perfect for the office."
@@ -106,7 +106,7 @@ const products = [
         image: "WhatsApp Image 2026-06-13 at 7.58.31 AM.jpeg",
         rating: 4.9,
         reviews: 201,
-        badge: "sale",
+        badge: "new",
         sizes: ["One Size"],
         colors: ["#d4a574", "#1a1a2e", "#e94560", "#495057"],
         description: "Matches your dressing for anykind of outing."
@@ -120,7 +120,7 @@ const products = [
         image: "WhatsApp Image 2026-06-13 at 10.41.38 AM.jpeg",
         rating: 4.4,
         reviews: 167,
-        badge: null,
+        badge: "new",
         sizes: ["S", "M", "L", "XL", "XXL"],
         colors: ["#28a745", "#1a1a2e", "#ffffff", "#e94560"],
         description: "Classic casa blanca top in premium pique cotton. Features a ribbed collar and cuffs."
@@ -148,7 +148,7 @@ const products = [
         image: "WhatsApp Image 2026-06-13 at 8.10.26 AM.jpeg",
         rating: 4.5,
         reviews: 134,
-        badge: null,
+        badge: "new",
         sizes: ["S", "M", "L", "XL"],
         colors: ["#d4a574", "#1a1a2e"],
         description: "Genuine leather bag with a classic zip. Durable construction that ages beautifully over time."
@@ -162,7 +162,7 @@ const products = [
         image: "WhatsApp Image 2026-06-13 at 10.41.45 AM.jpeg",
         rating: 4.7,
         reviews: 45,
-        badge: "sale",
+        badge: "new",
         sizes: ["S", "M", "L", "XL"],
         colors: ["#d4a574", "#ffffff", "#495057"],
         description: "Well designed top."
@@ -176,7 +176,7 @@ const products = [
         image: "WhatsApp Image 2026-06-13 at 7.40.42 AM.jpeg",
         rating: 4.3,
         reviews: 215,
-        badge: "sale",
+        badge: "new",
         sizes: ["XS", "S", "M", "L", "XL"],
         colors: ["#e94560", "#28a745", "#ffc107"],
         description: "A beautiful gown with a flowing silhouette. Made from lightweight, breathable fabric perfect for warm days."
@@ -190,7 +190,7 @@ const products = [
         image: "WhatsApp Image 2026-06-12 at 2.18.03 PM.jpeg",
         rating: 5.0,
         reviews: 215,
-        badge: "sale",
+        badge: "new",
         sizes: ["XS", "S", "M", "L", "XL"],
         colors: ["#e94560", "#28a745", "#ffc107"],
         description: "A perfume that brings a cool attractive smell."
@@ -204,7 +204,7 @@ const products = [
         image: "WhatsApp Image 2026-06-12 at 2.18.42 PM.jpeg",
         rating: 5.0,
         reviews: 215,
-        badge: "sale",
+        badge: "new",
         sizes: ["XS", "S", "M", "L", "XL"],
         colors: ["#e94560", "#28a745", "#ffc107"],
         description: "A perfume that brings a cool attractive smell."
@@ -218,7 +218,7 @@ const products = [
         image: "WhatsApp Image 2026-06-12 at 2.18.06 PM.jpeg",
         rating: 5.0,
         reviews: 215,
-        badge: "sale",
+        badge: "new",
         sizes: ["XS", "S", "M", "L", "XL"],
         colors: ["#e94560", "#28a745", "#ffc107"],
         description: "Good for packing of hair."
@@ -232,7 +232,7 @@ const products = [
         image: "WhatsApp Image 2026-06-12 at 2.18.21 PM.jpeg",
         rating: 5.0,
         reviews: 215,
-        badge: "sale",
+        badge: "new",
         sizes: ["XS", "S", "M", "L", "XL"],
         colors: ["#e94560", "#28a745", "#ffc107"],
         description: "Best for couples."
@@ -246,11 +246,11 @@ const products = [
         image: "WhatsApp Image 2026-06-13 at 7.41.44 AM.jpeg",
         rating: 5.0,
         reviews: 215,
-        badge: "sale",
+        badge: "new",
         sizes: ["XS", "S", "M", "L", "XL"],
         colors: ["#e94560", "#28a745", "#ffc107"],
         description: "A perfume that brings a cool attractive smell."
-    },
+    }
 ];
 
 // ===== State =====
