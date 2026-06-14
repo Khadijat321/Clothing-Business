@@ -260,8 +260,8 @@ const CURRENCY_CODE = 'NGN';
 // YOUR NIGERIAN BANK DETAILS - CHANGE THESE TO YOUR REAL DETAILS
 const YOUR_BANK_DETAILS = {
     accountName: 'YOUR FULL NAME',           // <-- CHANGE THIS
-    accountNumber: '0123456789',               // <-- CHANGE THIS
-    bankName: 'First Bank of Nigeria',         // <-- CHANGE THIS
+    accountNumber: '9021724271',               // <-- CHANGE THIS
+    bankName: 'Opay',         // <-- CHANGE THIS
     bankCode: '011'                            // <-- CHANGE THIS
 };
 
@@ -277,10 +277,10 @@ const API_BASE_URL = window.location.hostname === 'localhost'
     : 'https://your-backend-url.com/api';  // <-- CHANGE THIS
 
 // Your WhatsApp number for order notifications (format: 2348012345678)
-const YOUR_WHATSAPP = '2348012345678';  // <-- CHANGE THIS to your real WhatsApp
+const YOUR_WHATSAPP = '2349021724271';  // <-- CHANGE THIS to your real WhatsApp
 
 // Your email where you want to receive messages
-const YOUR_EMAIL = 'your-email@example.com';  // <-- CHANGE THIS
+const YOUR_EMAIL = 'Khadijatyusuf554@gmail.com';  // <-- CHANGE THIS
 
 // ===== State =====
 let cart = JSON.parse(localStorage.getItem('luxethreads_cart')) || [];
