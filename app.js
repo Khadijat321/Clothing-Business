@@ -85,17 +85,17 @@ const products = [
     },
     {
         id: 7,
-        name: "Denim Jacket",
+        name: "Crop Top",
         category: "women",
         price: 99.99,
         originalPrice: null,
-        image: "https://images.unsplash.com/photo-1523205771623-e0faa4d2813d?w=400",
+        image: "WhatsApp Image 2026-06-13 at 7.41.09 AM.jpeg",
         rating: 4.7,
         reviews: 143,
         badge: "new",
         sizes: ["XS", "S", "M", "L", "XL"],
         colors: ["#495057", "#1a1a2e"],
-        description: "Classic denim jacket with a modern fit. Features button front, chest pockets, and adjustable waist tabs."
+        description: "Classic crop top with a modern fit. Features adjustable waist tabs."
     },
     {
         id: 8,
