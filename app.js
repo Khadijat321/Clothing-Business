@@ -31,7 +31,7 @@ const products = [
         id: 3,
         name: "Armless Top",
         category: "women",
-        price: 3k,
+        price: 3000,
         originalPrice: null,
         image: "WhatsApp Image 2026-06-13 at 11.08.50 AM.jpeg",
         rating: 4.9,
