@@ -3,7 +3,7 @@ const products = [
         id: 1,
         name: "Top",
         category: "men",
-        price: 89.99,
+        price: 1,
         originalPrice: 120.00,
         image: "WhatsApp Image 2026-06-13 at 10.41.17 AM.jpeg",
         rating: 4.8,
