@@ -269,7 +269,7 @@ const YOUR_BANK_DETAILS = {
 const PAYSTACK_PUBLIC_KEY = 'pk_test_3ad444dd921603aa1cb01d9f3f76c26648f595c5';  // <-- CHANGE THIS when ready
 
 // Flutterwave Public Key (Alternative - get from dashboard.flutterwave.com)
-const FLUTTERWAVE_PUBLIC_KEY = 'FLWPUBK_TEST-YOUR_FLUTTERWAVE_KEY';  // <-- CHANGE THIS when ready
+const FLUTTERWAVE_PUBLIC_KEY = 'FLWPUBK_TEST-84031f42d0ab80e042386f47820ad16b-X';  // <-- CHANGE THIS when ready
 
 // Backend URL
 const API_BASE_URL = window.location.hostname === 'localhost' 
@@ -769,41 +769,104 @@ async function placeOrder(e) {
 
 // ===== PAYSTACK PAYMENT =====
 async function handlePaystackPayment(orderData, amount, email, phone) {
+    // Check if Paystack is configured
     if (PAYSTACK_PUBLIC_KEY.includes('YOUR_PAYSTACK_KEY')) {
-        showToast('Paystack not configured yet. Using Bank Transfer instead.', 'warning');
+        showToast('Paystack not configured yet. Showing Bank Transfer option instead.', 'warning');
+        // Automatically show bank transfer instead
         showBankTransferModal(orderData, amount);
         return;
     }
     
-    if (!window.PaystackPop) {
-        await loadScript('https://js.paystack.co/v1/inline.js');
+    // Show loading
+    showToast('Loading payment... Please wait.', 'success');
+    
+    try {
+        // Load Paystack script if not already loaded
+        if (!window.PaystackPop) {
+            await loadScript('https://js.paystack.co/v1/inline.js');
+        }
+        
+        const handler = PaystackPop.setup({
+            key: PAYSTACK_PUBLIC_KEY,
+            email: email,
+            amount: amount * 100, // Paystack uses kobo (1 Naira = 100 kobo)
+            currency: 'NGN',
+            ref: orderData.orderId,
+            metadata: {
+                custom_fields: [
+                    {
+                        display_name: "Order ID",
+                        variable_name: "order_id",
+                        value: orderData.orderId
+                    },
+                    {
+                        display_name: "Phone Number",
+                        variable_name: "phone",
+                        value: phone
+                    }
+                ]
+            },
+            callback: function(response) {
+                // Payment successful
+                orderData.status = 'paid';
+                orderData.paymentReference = response.reference;
+                finalizeOrder(orderData);
+                showToast('Payment successful! Thank you for your order.', 'success');
+            },
+            onClose: function() {
+                showToast('Payment window closed. Your order was not completed.', 'warning');
+            }
+        });
+        
+        handler.openIframe();
+        
+    } catch (err) {
+        console.error('Paystack error:', err);
+        showToast('Could not load Paystack. Please use Bank Transfer instead.', 'error');
+        showBankTransferModal(orderData, amount);
+    }
+}
+
+
+async function handleFlutterwavePayment(orderData, amount, email, phone, name) {
+    if (FLUTTERWAVE_PUBLIC_KEY.includes('YOUR_FLUTTERWAVE_KEY')) {
+        showToast('Flutterwave not configured. Using Bank Transfer instead.', 'warning');
+        showBankTransferModal(orderData, amount);
+        return;
     }
     
-    const handler = PaystackPop.setup({
-        key: PAYSTACK_PUBLIC_KEY,
-        email: email,
-        amount: amount * 100,
+    if (!window.FlutterwaveCheckout) {
+        await loadScript('https://checkout.flutterwave.com/v3.js');
+    }
+    
+    FlutterwaveCheckout({
+        public_key: FLUTTERWAVE_PUBLIC_KEY,
+        tx_ref: orderData.orderId,
+        amount: amount,
         currency: 'NGN',
-        ref: orderData.orderId,
-        metadata: {
-            custom_fields: [
-                { display_name: "Order ID", variable_name: "order_id", value: orderData.orderId },
-                { display_name: "Phone Number", variable_name: "phone", value: phone }
-            ]
+        payment_options: 'card,ussd,banktransfer',
+        customer: {
+            email: email,
+            phone_number: phone,
+            name: name
         },
-        callback: function(response) {
+        customizations: {
+            title: 'Luxe Threads',
+            description: 'Payment for order ' + orderData.orderId,
+            logo: 'https://your-logo-url.com/logo.png'
+        },
+        callback: function(data) {
             orderData.status = 'paid';
-            orderData.paymentReference = response.reference;
+            orderData.paymentReference = data.transaction_id;
             finalizeOrder(orderData);
-            showToast('Payment successful! Thank you for your order.', 'success');
+            showToast('Payment successful! Order confirmed.', 'success');
         },
-        onClose: function() {
-            showToast('Payment window closed. Your order was not completed.', 'warning');
+        onclose: function() {
+            showToast('Payment cancelled.', 'warning');
         }
     });
-    
-    handler.openIframe();
 }
+
 
 // ===== BANK TRANSFER =====
 async function handleBankTransfer(orderData, amount) {
