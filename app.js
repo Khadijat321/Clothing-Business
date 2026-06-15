@@ -259,14 +259,14 @@ const CURRENCY_CODE = 'NGN';
 
 // YOUR NIGERIAN BANK DETAILS - CHANGE THESE TO YOUR REAL DETAILS
 const YOUR_BANK_DETAILS = {
-    accountName: 'YOUR FULL NAME',           // <-- CHANGE THIS
+    accountName: 'KHADIJAT ABISOLA YUSUF',           // <-- CHANGE THIS
     accountNumber: '9021724271',               // <-- CHANGE THIS
     bankName: 'Opay',         // <-- CHANGE THIS
     bankCode: '011'                            // <-- CHANGE THIS
 };
 
 // Paystack Public Key (Test mode - get yours from dashboard.paystack.com)
-const PAYSTACK_PUBLIC_KEY = 'pk_test_YOUR_PAYSTACK_KEY';  // <-- CHANGE THIS when ready
+const PAYSTACK_PUBLIC_KEY = 'pk_test_3ad444dd921603aa1cb01d9f3f76c26648f595c5';  // <-- CHANGE THIS when ready
 
 // Flutterwave Public Key (Alternative - get from dashboard.flutterwave.com)
 const FLUTTERWAVE_PUBLIC_KEY = 'FLWPUBK_TEST-YOUR_FLUTTERWAVE_KEY';  // <-- CHANGE THIS when ready
