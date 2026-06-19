@@ -250,7 +250,21 @@ const products = [
         sizes: ["XS", "S", "M", "L", "XL"],
         colors: ["#e94560", "#28a745", "#ffc107"],
         description: "A perfume that brings a cool attractive smell."
-    }
+    },
+    {
+        id: 2,
+        name: "Top Cloth",
+        category: "UniSex",
+        price: 79.99,
+        originalPrice: null,
+        image: "WhatsApp Image 2026-06-13 at 10.57.43 AM.jpeg",
+        rating: 4.6,
+        reviews: 89,
+        badge: "new",
+        sizes: ["28", "30", "32", "34", "36"],
+        colors: ["#d4a574", "#1a1a2e", "#868e96"],
+        description: "Versatile Top. Features a modern tapered chest and comfortable fit for all-day wear."
+    },
 ];
 
 // ===== NIGERIA CONFIG =====
