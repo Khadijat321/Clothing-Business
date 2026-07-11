@@ -238,7 +238,7 @@ const products = [
         description: "Best for couples."
     },
      {
-        id: 14,
+        id: 18,
         name: "KALY",
         category: "Perfumes",
         price: 10000.00,
@@ -252,7 +252,7 @@ const products = [
         description: "A perfume that brings a cool attractive smell."
     },
     {
-        id: 15,
+        id: 19,
         name: "Top Cloth",
         category: "UniSex",
         price: 15000.00,
@@ -266,12 +266,12 @@ const products = [
         description: "Versatile Top. Features a modern tapered chest and comfortable fit for all-day wear."
     },
      {
-        id: 16,
+        id: 20,
         name: "Top Cloth",
         category: "UniSex",
         price: 15000.00,
         originalPrice: null,
-        image: "WhatsApp Image 2026-06-13 at 10.57.43 AM.jpeg",
+        image: "WhatsApp Image 2026-06-13 at 10.41.43 AM.jpeg",
         rating: 4.6,
         reviews: 89,
         badge: "new",
