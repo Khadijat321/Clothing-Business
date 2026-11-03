@@ -1,6 +1,9 @@
+const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const fs = require('fs').promises;
 const path = require('path');
 
@@ -19,6 +22,13 @@ const ORDERS_FILE = path.join(DATA_DIR, 'orders.json');
 const CONTACTS_FILE = path.join(DATA_DIR, 'contacts.json');
 const NEWSLETTER_FILE = path.join(DATA_DIR, 'newsletter.json');
 const CHAT_FILE = path.join(DATA_DIR, 'chat.json');
+const USERS_FILE = path.join(DATA_DIR, 'users.json');
+
+const JWT_SECRET = process.env.JWT_SECRET;
+
+if (!JWT_SECRET) {
+    throw new Error('JWT_SECRET environment variable is required');
+}
 
 // Ensure data directory exists
 async function ensureDataDir() {
@@ -53,6 +63,264 @@ const transporter = nodemailer.createTransport({
         pass: process.env.EMAIL_PASS || 'your-app-password'
     }
 });
+
+// ==========================================
+// CUSTOMER AUTHENTICATION SYSTEM
+// ==========================================
+
+// Generate authentication token
+function generateToken(user) {
+    return jwt.sign(
+        {
+            id: user.id,
+            email: user.email
+        },
+        JWT_SECRET,
+        { expiresIn: '7d' }
+    );
+}
+
+// Remove sensitive information
+function safeUser(user) {
+    return {
+        id: user.id,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        phone: user.phone,
+        createdAt: user.createdAt
+    };
+}
+
+// Authentication middleware
+async function authenticateCustomer(req, res, next) {
+    try {
+        const authHeader = req.headers.authorization;
+
+        if (!authHeader || !authHeader.startsWith('Bearer ')) {
+            return res.status(401).json({
+                success: false,
+                message: 'Please sign in to continue.'
+            });
+        }
+
+        const token = authHeader.split(' ')[1];
+        const decoded = jwt.verify(token, JWT_SECRET);
+
+        const users = await readJsonFile(USERS_FILE);
+
+        const user = users.find(
+            u => u.id === decoded.id &&
+                 u.email === decoded.email
+        );
+
+        if (!user) {
+            return res.status(401).json({
+                success: false,
+                message: 'Your account could not be verified.'
+            });
+        }
+
+        req.user = safeUser(user);
+        next();
+
+    } catch (error) {
+        return res.status(401).json({
+            success: false,
+            message: 'Your session has expired. Please sign in again.'
+        });
+    }
+}
+
+
+// ==========================================
+// CUSTOMER REGISTRATION
+// ==========================================
+
+app.post('/api/auth/register', async (req, res) => {
+    try {
+        const {
+            firstName,
+            lastName,
+            email,
+            phone,
+            password
+        } = req.body;
+
+        if (
+            !firstName?.trim() ||
+            !lastName?.trim() ||
+            !email?.trim() ||
+            !phone?.trim() ||
+            !password
+        ) {
+            return res.status(400).json({
+                success: false,
+                message: 'Please complete all required fields.'
+            });
+        }
+
+        if (password.length < 8) {
+            return res.status(400).json({
+                success: false,
+                message: 'Password must contain at least 8 characters.'
+            });
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+            return res.status(400).json({
+                success: false,
+                message: 'Please enter a valid email address.'
+            });
+        }
+
+        const users = await readJsonFile(USERS_FILE);
+
+        const normalizedEmail = email.trim().toLowerCase();
+
+        const existingUser = users.find(
+            user => user.email === normalizedEmail
+        );
+
+        if (existingUser) {
+            return res.status(409).json({
+                success: false,
+                message: 'An account with this email already exists.'
+            });
+        }
+
+        const hashedPassword = await bcrypt.hash(password, 12);
+
+        const newUser = {
+            id: 'USR-' + Date.now().toString(36).toUpperCase(),
+            firstName: firstName.trim(),
+            lastName: lastName.trim(),
+            email: normalizedEmail,
+            phone: phone.trim(),
+            password: hashedPassword,
+            createdAt: new Date().toISOString()
+        };
+
+        users.push(newUser);
+
+        await writeJsonFile(USERS_FILE, users);
+
+        const token = generateToken(newUser);
+
+        return res.status(201).json({
+            success: true,
+            message: 'Your account has been created successfully!',
+            data: {
+                token,
+                user: safeUser(newUser)
+            }
+        });
+
+    } catch (error) {
+        console.error('Registration error:', error);
+
+        return res.status(500).json({
+            success: false,
+            message: 'Unable to create your account. Please try again.'
+        });
+    }
+});
+
+
+// ==========================================
+// CUSTOMER LOGIN
+// ==========================================
+
+app.post('/api/auth/login', async (req, res) => {
+    try {
+        const { email, password } = req.body;
+
+        if (!email || !password) {
+            return res.status(400).json({
+                success: false,
+                message: 'Email and password are required.'
+            });
+        }
+
+        const users = await readJsonFile(USERS_FILE);
+
+        const normalizedEmail = email.trim().toLowerCase();
+
+        const user = users.find(
+            u => u.email === normalizedEmail
+        );
+
+        if (!user) {
+            return res.status(401).json({
+                success: false,
+                message: 'Invalid email or password.'
+            });
+        }
+
+        const passwordMatch = await bcrypt.compare(
+            password,
+            user.password
+        );
+
+        if (!passwordMatch) {
+            return res.status(401).json({
+                success: false,
+                message: 'Invalid email or password.'
+            });
+        }
+
+        const token = generateToken(user);
+
+        return res.json({
+            success: true,
+            message: 'Login successful!',
+            data: {
+                token,
+                user: safeUser(user)
+            }
+        });
+
+    } catch (error) {
+        console.error('Login error:', error);
+
+        return res.status(500).json({
+            success: false,
+            message: 'Unable to sign in. Please try again.'
+        });
+    }
+});
+
+
+// ==========================================
+// GET LOGGED-IN CUSTOMER PROFILE
+// ==========================================
+
+app.get(
+    '/api/auth/me',
+    authenticateCustomer,
+    async (req, res) => {
+        res.json({
+            success: true,
+            data: req.user
+        });
+    }
+);
+
+
+// ==========================================
+// CUSTOMER LOGOUT ENDPOINT
+// ==========================================
+
+app.post(
+    '/api/auth/logout',
+    authenticateCustomer,
+    (req, res) => {
+        res.json({
+            success: true,
+            message: 'Logged out successfully.'
+        });
+    }
+);
 
 // ============================================
 // PRODUCTS API
