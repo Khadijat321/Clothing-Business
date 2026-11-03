@@ -33,6 +33,42 @@
                     <span class="cart-count" id="cartCount">0</span>
                 </button>
             </div>
+            <!-- Customer Account -->
+<div class="account-wrapper" id="accountWrapper">
+    <button class="account-btn" id="authBtn">
+        <i class="fas fa-user-circle"></i>
+        <span>Account</span>
+        <i class="fas fa-chevron-down"></i>
+    </button>
+
+    <div class="auth-menu" id="authMenu">
+        <div class="auth-menu-header" id="authMenuHeader">
+            <i class="fas fa-user-circle"></i>
+            <span>Guest</span>
+        </div>
+
+        <div id="authMenuLinks">
+            <a href="#" id="loginMenuLink">
+                <i class="fas fa-sign-in-alt"></i> Sign In
+            </a>
+            <a href="#" id="signupMenuLink">
+                <i class="fas fa-user-plus"></i> Create Account
+            </a>
+        </div>
+
+        <div id="userMenuLinks" class="hidden">
+            <a href="#" id="profileLink">
+                <i class="fas fa-user"></i> My Profile
+            </a>
+            <a href="#" id="ordersLink">
+                <i class="fas fa-box"></i> My Orders
+            </a>
+            <a href="#" id="logoutLink">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </div>
+    </div>
+</div>
         </div>
     </nav>
 
@@ -469,6 +505,215 @@
     <a href="https://wa.me/+2349021724271" class="whatsapp-btn" target="_blank" title="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- CUSTOMER AUTHENTICATION -->
+<div class="modal-overlay auth-modal" id="authModal">
+
+    <div class="auth-container">
+
+        <button class="auth-close" id="authModalClose">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <div class="auth-visual">
+            <div class="auth-brand">
+                <i class="fas fa-gem"></i>
+                <h2>Lady T Collection</h2>
+            </div>
+
+            <div class="auth-visual-content">
+                <span>YOUR STYLE, YOUR STORY</span>
+                <h1>Fashion that speaks for you.</h1>
+                <p>
+                    Join Lady T Collection and enjoy a personalized
+                    shopping experience.
+                </p>
+            </div>
+
+            <div class="auth-visual-footer">
+                <i class="fas fa-shield-alt"></i>
+                Secure shopping. Personal experience.
+            </div>
+        </div>
+
+        <div class="auth-form-area">
+
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">
+                    Sign In
+                </button>
+
+                <button class="auth-tab" data-tab="signup">
+                    Create Account
+                </button>
+            </div>
+
+            <!-- LOGIN -->
+            <div class="auth-panel active" id="loginPanel">
+
+                <h2>Welcome Back!</h2>
+                <p class="auth-description">
+                    Sign in to continue shopping with us.
+                </p>
+
+                <form id="loginForm">
+
+                    <div class="auth-input-group">
+                        <label>Email Address</label>
+                        <div class="auth-input">
+                            <i class="fas fa-envelope"></i>
+                            <input
+                                type="email"
+                                id="loginEmail"
+                                placeholder="Enter your email"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="auth-input-group">
+                        <label>Password</label>
+                        <div class="auth-input">
+                            <i class="fas fa-lock"></i>
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                placeholder="Enter your password"
+                                required
+                            >
+                            <button type="button" class="password-toggle"
+                                data-target="loginPassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="auth-extra">
+                        <label>
+                            <input type="checkbox" id="rememberMe">
+                            Remember me
+                        </label>
+                        <a href="#" id="forgotPasswordLink">
+                            Forgot password?
+                        </a>
+                    </div>
+
+                    <button type="submit"
+                        class="auth-submit"
+                        id="loginSubmitBtn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Sign In
+                    </button>
+
+                </form>
+
+                <p class="auth-switch">
+                    Don't have an account?
+                    <a href="#" id="switchToSignup">Create one</a>
+                </p>
+
+            </div>
+
+            <!-- SIGN UP -->
+            <div class="auth-panel" id="signupPanel">
+
+                <h2>Create Your Account</h2>
+                <p class="auth-description">
+                    Join us and make shopping easier.
+                </p>
+
+                <form id="signupForm">
+
+                    <div class="auth-name-row">
+
+                        <div class="auth-input-group">
+                            <label>First Name</label>
+                            <div class="auth-input">
+                                <i class="fas fa-user"></i>
+                                <input type="text"
+                                    id="signupFirstName"
+                                    placeholder="First name"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="auth-input-group">
+                            <label>Last Name</label>
+                            <div class="auth-input">
+                                <i class="fas fa-user"></i>
+                                <input type="text"
+                                    id="signupLastName"
+                                    placeholder="Last name"
+                                    required>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="auth-input-group">
+                        <label>Email Address</label>
+                        <div class="auth-input">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email"
+                                id="signupEmail"
+                                placeholder="Enter your email"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="auth-input-group">
+                        <label>Phone Number</label>
+                        <div class="auth-input">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel"
+                                id="signupPhone"
+                                placeholder="08012345678"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="auth-input-group">
+                        <label>Password</label>
+                        <div class="auth-input">
+                            <i class="fas fa-lock"></i>
+                            <input type="password"
+                                id="signupPassword"
+                                placeholder="Minimum 8 characters"
+                                minlength="8"
+                                required>
+                            <button type="button" class="password-toggle"
+                                data-target="signupPassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="auth-terms">
+                        <input type="checkbox" id="acceptTerms" required>
+                        <label for="acceptTerms">
+                            I agree to the Terms and Privacy Policy.
+                        </label>
+                    </div>
+
+                    <button type="submit"
+                        class="auth-submit"
+                        id="signupSubmitBtn">
+                        <i class="fas fa-user-plus"></i>
+                        Create Account
+                    </button>
+
+                </form>
+
+                <p class="auth-switch">
+                    Already have an account?
+                    <a href="#" id="switchToLogin">Sign In</a>
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+</div>
 
     <!-- Toast Notifications -->
     <div class="toast-container" id="toastContainer"></div>
