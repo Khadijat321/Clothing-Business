@@ -1205,7 +1205,8 @@ function loadScript(src) {
 }
 
 // ===== Event Listeners =====
-function setupEventListeners(// Password visibility toggle
+function setupEventListeners(
+    // Password visibility toggle
 document.querySelectorAll('.password-toggle').forEach(button => {
     button.addEventListener('click', () => {
         const input = document.getElementById(
@@ -1222,7 +1223,8 @@ document.querySelectorAll('.password-toggle').forEach(button => {
             icon.classList.replace('fa-eye-slash', 'fa-eye');
         }
     });
-});) {
+});
+) {
     navToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         const icon = navToggle.querySelector('i');
