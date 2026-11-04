@@ -1205,26 +1205,7 @@ function loadScript(src) {
 }
 
 // ===== Event Listeners =====
-function setupEventListeners(
-    // Password visibility toggle
-document.querySelectorAll('.password-toggle').forEach(button => {
-    button.addEventListener('click', () => {
-        const input = document.getElementById(
-            button.dataset.target
-        );
-
-        const icon = button.querySelector('i');
-
-        if (input.type === 'password') {
-            input.type = 'text';
-            icon.classList.replace('fa-eye', 'fa-eye-slash');
-        } else {
-            input.type = 'password';
-            icon.classList.replace('fa-eye-slash', 'fa-eye');
-        }
-    });
-});
-) {
+function setupEventListeners() {
     navToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         const icon = navToggle.querySelector('i');
